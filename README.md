@@ -7,3 +7,4 @@ Expressjs tutorials
 
 3. npm install -D nodemon : Bu buyruq yordamida backend kodlarini ishga tushirishda qayta-qayta bajarmasdan bir marta ishga tushirganimizda o'zgarishlarni avtomatik ravishda ishga tushiradigan kutubxonasini o'rnatamiz. 
 
+4. npm install express-validator : bu buyruq yordamida server so'rovlarini validatsiya qilish mumkin, nodejs 14+ versiyasida ishga tushiring, 
