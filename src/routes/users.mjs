@@ -13,6 +13,15 @@ router.get('/filtered',
   .notEmpty().withMessage("Must not be empty")
   .isLength({min:3, max: 15}).withMessage("Must be at least 3-15 characters"), 
   (req, res) => {
+    console.log(req.session.id);
+    req.sessionStore.get(req.session.id, (err, sessionData) => {
+      if(err) {
+        console.log(err);
+        throw err;
+      }
+
+      console.log(sessionData);
+    })
     const result = validationResult(req);
     console.log(result);
     const { query: {
@@ -28,14 +37,6 @@ router.get('/pupils', (req, res) => {
   res.status(201).send(pupils);
 });
 
-// params
-router.get('/pupils/:id', resolveIndexByPupilId, (req, res) => {
-  const {findPupilIndex} = req;
-  const findPupil = pupils[findPupilIndex];
-  if(!findPupil) return res.sendStatus(404)
-
-  return res.send(findPupil)
-})
 
 // POST Method
 router.post('/pupils', 

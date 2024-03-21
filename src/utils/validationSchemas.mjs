@@ -39,5 +39,4 @@ export const createPupilValidationSchema = {
   }
 }
 
-export const filterPupilValidationSchema = {}
 
