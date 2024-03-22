@@ -8,3 +8,9 @@ Expressjs tutorials
 3. npm install -D nodemon : Bu buyruq yordamida backend kodlarini ishga tushirishda qayta-qayta bajarmasdan bir marta ishga tushirganimizda o'zgarishlarni avtomatik ravishda ishga tushiradigan kutubxonasini o'rnatamiz. 
 
 4. npm install express-validator : bu buyruq yordamida server so'rovlarini validatsiya qilish mumkin, nodejs 14+ versiyasida ishga tushiring, 
+
+5. npm install cookie-parsers : bu buyruq yordamida server so'rovlarini cookie ga yozish
+
+6. npm install express-session : bu buyruq yordamida server so'rovlarini session cookie ga yozish
+
+7. npm install passport : bu buyruq yordamida { google, facebook, twitter, github, linkedIn, gmail, vhk } lar orqali authentication qilish mumkin

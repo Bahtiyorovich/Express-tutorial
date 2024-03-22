@@ -1,42 +1,59 @@
-export const createPupilValidationSchema = {
-  id:{
-    isLength:{
-      options: {
-        min: 1,
-        max: 50
-      }
-    },
-    notEmpty: {
-      errorMessage: "ID cannot be empty"
-    },
-    isString: {
-      errorMessage: "ID must be a string"
-    },
-  },
-  pupil: {
+export const createValidationSchema = {
+  username: {
     isLength: {
       options: {
-        min: 5,
+        min: 3,
         max: 32
       },
-      errorMessage: "Pupil name must be at least 5 characters with a max of 32 characters",
+      errorMessage: "Mentor username must be at least 3 characters with a max of 32 characters",
     },
     notEmpty: {
-      errorMessage: "Pupil name cannot be empty",
+      errorMessage: "Mentor username cannot be empty",
     },
     isString: {
-      errorMessage: "Pupil name must be a string"
+      errorMessage: "Mentor username must be a string"
     }
   },
-  coin: {
-    isInt: {
+  displayName: {
+    isLength: {
       options: {
-        max: 10000
+        min: 3,
+        max: 32
       },
-      errorMessage: "Pupil name must be at least 10 score"
+      errorMessage: "Mentor display name must be at least 3 characters with a max of 32 characters",
     },
     notEmpty: false,
+    isString: {
+      errorMessage: "Mentor display name must be a string"
+    }
+  },
+  phoneNumber:{
+    notEmpty: true,
+    isString: false,
+  },
+  password: {
+    notEmpty: true,
   }
 }
 
 
+export const loginValidationSchema = {
+  username: {
+    isLength: {
+      options: {
+        min: 3,
+        max: 32
+      },
+      errorMessage: "Mentor username must be at least 3 characters with a max of 32 characters",
+    },
+    notEmpty: {
+      errorMessage: "Mentor username cannot be empty",
+    },
+    isString: {
+      errorMessage: "Mentor username must be a string"
+    }
+  },
+  password: {
+    notEmpty: true,
+  }
+}
