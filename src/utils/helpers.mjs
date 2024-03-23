@@ -9,3 +9,5 @@ export function hashedPassword(password){
 export function comparePassword(plain, hashed){
   return bcrypt.compareSync(plain, hashed);
 }
+
+

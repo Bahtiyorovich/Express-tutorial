@@ -36,7 +36,6 @@ export const createValidationSchema = {
   }
 }
 
-
 export const loginValidationSchema = {
   username: {
     isLength: {

@@ -31,7 +31,7 @@ router.post('/auth/register', checkSchema(createValidationSchema), async (req, r
   const result = validationResult(req);
   if(!result.isEmpty()) return res.status(400).send(result.array());
   const data = matchedData(req);
-
+  
   data.password = hashedPassword(data.password)
   const newMentor = new Mentor(data);
   try {
