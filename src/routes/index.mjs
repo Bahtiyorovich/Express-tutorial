@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import mentorRouter from './mentor.mjs';
-import authRouter from './auth.mjs';
+import authRouter from './auth-login.mjs';
 import pupilRouter from './pupils.mjs';
 
 const router = Router();

@@ -1,8 +1,5 @@
 import { Router } from 'express'
 import passport from 'passport';
-import { Mentor } from '../models/mentor.model.mjs';
-import { checkSchema, matchedData, validationResult } from 'express-validator';
-import { loginValidationSchema } from '../utils/validationSchemas.mjs';
 
 const router = Router();
 
@@ -14,33 +11,22 @@ router.get('/', (req, res) => {
   res.status(200).send({msg: "Welcome to your account!"});
 })
 
-router.post(
-  '/auth/login', 
-  passport.authenticate('local'), 
+router.get('/status', (req, res) => {
+  
+})
+
+router.post('/login', passport.authenticate('local'), 
   (req, res) => {
     res.sendStatus(200);
 });
 
-router.post('/auth/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   if(!req.user) return res.sendStatus(401)
 
   req.logout(err => {
     if(err) return res.sendStatus(400)
     res.send(200)
   })
-})
-
-router.get('/auth/status', (req, res) => {
-  // req.sessionStore.get(req.sessionID, (err, session) => {
-  //   console.log(session);
-  // })
-  // return req.session.mentor
-  //   ? res.status(200).send(req.session.mentor) 
-  //   : res.status(401).send({ msg:"Not Authenticated"});
-  console.log('Inside /auth/status endpoint',)
-  console.log(req.user);
-  console.log(req.session);
-  return req.user ? res.send(req.user) : res.sendStatus(401)
 })
 
 router.post('/cart', (req, res) => {
