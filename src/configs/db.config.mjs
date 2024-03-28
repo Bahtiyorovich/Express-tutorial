@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
-const uri = 'mongodb+srv://sherzodjon0317:zLl4mQMcXNU1pfHB@cluster0.aknmiiu.mongodb.net/'
+import dotenv from 'dotenv';
+dotenv.config();
 
-mongoose.connect(uri, 
+mongoose.connect(
+  process.env.MONGODB_URL, 
   { 
     useNewUrlParser: true, 
-    useUnifiedTopology: true 
+    useUnifiedTopology: true
   })
   .then(() => console.log('Connected Successfully'))
   .catch((err) => console.log(err))
