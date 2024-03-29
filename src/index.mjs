@@ -5,6 +5,7 @@ import session from 'express-session';
 import passport from 'passport';
 import './configs/db.config.mjs';
 import './strategies/local-strategy.mjs';
+import './strategies/discord-strategy.mjs';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';

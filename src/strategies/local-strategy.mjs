@@ -20,7 +20,7 @@ passport.deserializeUser(async (id, done) => {
 export default passport.use(
   new Strategy( async (username, password, done) => {
     try {
-      const findMentor = await Mentor.findOne({ username});
+      const findMentor = await Mentor.findOne({ username });
       if(!findMentor)throw new Error('Mentor not found'); 
       if(!comparePassword(password, findMentor.password)) 
         throw new Error('Bad Credentials');

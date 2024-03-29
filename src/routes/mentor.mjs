@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createMentor, updateMentor, patchMentor, deleteMentor, getMentors } from "../controllers/mentor.controller.mjs";
+import { createMentor, updateMentor, patchMentor, deleteMentor, getMentors } from "../controllers/mentor/mentor.controller.mjs";
 import { createValidationSchema, updateValidationSchema } from "../utils/validationSchemas.mjs";
 import { checkSchema } from "express-validator";
 
