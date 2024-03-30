@@ -32,7 +32,18 @@ export const createValidationSchema = {
     isString: false,
   },
   password: {
-    notEmpty: true,
+    isLength: {
+      options: {
+        min:8
+      },
+      errorMessage: 'Password must be at least 8 characters'
+    },
+    notEmpty: {
+      errorMessage: 'Password cannot be empty'
+    },
+    isString: {
+      errorMessage: 'Password must be a string'
+    }
   }
 }
 

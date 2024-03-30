@@ -51,7 +51,7 @@ export const patchMentor = async (req, res) => {
   try {
     const updateMentor = await Mentor.findByIdAndUpdate(id, data, { new: true});
     if (!updateMentor) return res.status(404).send('Mentor not found');
-    return res.status(200).send(updateMentor);
+    return res.status(200).send(updateMentor)
   } catch (error) {
     return res.status(500);
   }
@@ -62,7 +62,7 @@ export const deleteMentor = async (req, res) => {
   try {
     const deleteMentor = await Mentor.findByIdAndDelete(id);
     if (!deleteMentor) return res.status(404);
-    return res.status(204).send('Mentor deleted');
+    return res.status(200).send('Mentor deleted');
   } catch (error) {
     return res.status(500);
   }
